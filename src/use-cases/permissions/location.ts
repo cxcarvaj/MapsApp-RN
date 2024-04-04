@@ -8,6 +8,14 @@ import {
 import {PermissionsStatus} from '../../infrastructure/interfaces/permissions';
 import {Platform} from 'react-native';
 
+const permissionMapper: Record<RNPermissionStatus, PermissionsStatus> = {
+  granted: 'granted',
+  denied: 'denied',
+  blocked: 'blocked',
+  limited: 'limited',
+  unavailable: 'unavailable',
+};
+
 export const requestLocationPermission =
   async (): Promise<PermissionsStatus> => {
     let status: RNPermissionStatus = 'unavailable';
@@ -21,16 +29,8 @@ export const requestLocationPermission =
 
     if (status === 'blocked') {
       await openSettings();
-      // return await checkLocationPermission();
+      return await checkLocationPermission();
     }
-
-    const permissionMapper: Record<RNPermissionStatus, PermissionsStatus> = {
-      granted: 'granted',
-      denied: 'denied',
-      blocked: 'blocked',
-      limited: 'limited',
-      unavailable: 'unavailable',
-    };
 
     return permissionMapper[status] ?? 'undetermined';
   };
@@ -45,13 +45,6 @@ export const checkLocationPermission = async (): Promise<PermissionsStatus> => {
   } else {
     throw new Error('Platform not supported');
   }
-  const permissionMapper: Record<RNPermissionStatus, PermissionsStatus> = {
-    granted: 'granted',
-    denied: 'denied',
-    blocked: 'blocked',
-    limited: 'limited',
-    unavailable: 'unavailable',
-  };
 
   return permissionMapper[status] ?? 'undetermined';
 };
