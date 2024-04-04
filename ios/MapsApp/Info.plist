@@ -7,6 +7,18 @@
 		<string>Ionicons.ttf</string>
 	</array>
 
+	<!-- 🚨 Keep only the permissions used in your app 🚨 -->
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>I need your authorization to show the Map</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>YOUR-PURPOSE-KEY</key>
+		<string>I need your authorization to show the Map</string>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>I need your authorization to show the Map</string>
+
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
