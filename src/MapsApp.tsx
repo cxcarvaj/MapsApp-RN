@@ -1,12 +1,12 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {Text, View} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {NavigationContainer} from '@react-navigation/native';
+import {StackNavigator} from './presentation/navigation/StackNavigator';
 
 export const MapsApp = () => {
   return (
-    <View>
-      <Text>MapsApp</Text>
-      <Icon name="home" size={30} color="black" />
-    </View>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 };
