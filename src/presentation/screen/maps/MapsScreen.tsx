@@ -1,10 +1,17 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import {Map} from '../../components/maps/Map';
 
 export const MapsScreen = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>MapsScreen</Text>
+    <View style={styles.container}>
+      <Map />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+  },
+});
